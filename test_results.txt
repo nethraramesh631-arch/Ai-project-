@@ -1,0 +1,47 @@
+UNIT TESTS
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+test_duplicate_after_cleaning (test_project.ProjectTests.test_duplicate_after_cleaning) ... ok
+test_email_lowercase_only (test_project.ProjectTests.test_email_lowercase_only) ... ok
+test_fact_check_rejects_invented_phone (test_project.ProjectTests.test_fact_check_rejects_invented_phone) ... ok
+test_phone_cleaning (test_project.ProjectTests.test_phone_cleaning) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+
+EVALUATION HARNESS
+EVALUATION RESULTS
+------------------------------------------------------------------------
+E01: expected=(valid, 9840012345) actual=(valid, 9840012345) PASS
+E02: expected=(valid, 9876543210) actual=(valid, 9876543210) PASS
+E03: expected=(needs_fix, 1234567890) actual=(needs_fix, 1234567890) PASS
+E04: expected=(valid, 8765432109) actual=(valid, 8765432109) PASS
+E05: expected=(needs_fix, 7654321098) actual=(needs_fix, 7654321098) PASS
+
+RED-TEAM RESULTS
+RT1: status=needs_fix; reasons=phone_not_found_in_original_entry; missing_phone
+RT2: status=duplicate; reasons=duplicate_of_E02
+RT3: status=duplicate; reasons=duplicate_of_E02
+
+Evaluation score: 5/5
+Red-team cases are demonstrations; inspect the printed outcomes.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
